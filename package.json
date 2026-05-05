@@ -1,0 +1,24 @@
+{
+  "name": "casa-de-cambio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvscript/casa-de-cambio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gvscript/casa-de-cambio/issues"
+  },
+  "homepage": "https://github.com/gvscript/casa-de-cambio#readme",
+  "type": "module",
+  "dependencies": {
+    "vite": "^8.0.10"
+  }
+}
