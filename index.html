@@ -1,20 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Casa de Câmbio</title>
 </head>
 <body>
-  <main>
-    <section id="header-section">
-      <h1>Casa de <span>Câmbio</span></h1>
-      <div id="search">
-        <div id="wrap-coin-input">input</div>
-        <button id="search-btn">Pesquisar</button>
-      </div>
-    </section>
-  </main>
+  <div class="page-shell">
+    <main class="app-card">
+      <section class="hero-section">
+        <div class="hero-copy">
+          <h1>Casa de <span>Câmbio</span></h1>
+        </div>
+
+        <div id="search" class="search-group">
+          <div id="wrap-coin-input" class="input-group">
+            <label for="coin-input">Digite a moeda:</label>
+            <input type="text" id="coin-input" placeholder="USD">
+          </div>
+          <button id="search-btn">Pesquisar</button>
+        </div>
+      </section>
+
+      <section class="result-panel">
+        <div class="result-card">
+          <p class="result-placeholder">Os resultados aparecerão aqui após a busca.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
 </body>
 <script type="module" src="/src/main.js"></script>
 </html>
