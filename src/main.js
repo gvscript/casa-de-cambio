@@ -30,7 +30,7 @@ const applyResults = (data) => {
 };
 
 searchBtnEL.addEventListener('click', () => {
-  if (inputEL.value) {
+  if (moeda) {
     fetch(API_URL)
       .then((response) => response.json())
       .then((data) => applyResults(data.conversion_rates))

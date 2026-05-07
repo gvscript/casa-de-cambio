@@ -94,7 +94,7 @@ body {
   color: rgba(255, 255, 255, 0.4);
 }
 
-#search-btn {
+#search-btn, .swal2-confirm {
   border: none;
   cursor: pointer;
   border-radius: 16px;
@@ -107,7 +107,8 @@ body {
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-#search-btn:hover {
+
+#search-btn:hover, .swal2-confirm:hover {
   transform: translateY(-1px);
   filter: brightness(1.08);
 }
