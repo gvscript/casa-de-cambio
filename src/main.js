@@ -15,16 +15,16 @@ const applyResults = (data) => {
       </div>
       <div class="result-details">
         <span class="result-code">${key}</span>
-        <span class="result-value">${value}</span>
+        <span class="result-value">${value.toFixed(2)}</span>
       </div>
     </div>`)
   }).join('');
-  const resultsContainerEL = document.getElementById('result-content');
   const resultPlaceholderEL = document.getElementById('result-placeholder');
   resultPlaceholderEL.innerText = `Valores referente a 1 ${moeda}`;
   resultPlaceholderEL.classList.remove('result-placeholder');
   resultPlaceholderEL.classList.add('result-placeholder--actived');
   
+  const resultsContainerEL = document.getElementById('result-content');
   resultsContainerEL.innerHTML = resultsEl;
 };
 
