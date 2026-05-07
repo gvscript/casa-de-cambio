@@ -1,9 +1,10 @@
 import './style.css';
+import Swal from 'sweetalert2';
 
 const searchBtnEL = document.getElementById('search-btn');
 const inputEL = document.getElementById('coin-input');
 const API_KEY = import.meta.env.VITE_API_KEY;
-const moeda = 'USD';
+const moeda = '';
 const API_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${moeda}`
 
 const applyResults = (data) => {
@@ -29,16 +30,22 @@ const applyResults = (data) => {
 };
 
 searchBtnEL.addEventListener('click', () => {
-  fetch(API_URL)
-    .then((response) => response.json())
-    .then((data) => applyResults(data.conversion_rates))
-    .catch((error) => console.error(error));
-
-
-  // console.log('Olá, mundo!');
-  // console.log(searchBtnEL)
-  // console.log(inputEL)
-  // console.log(API_KEY);
-  // console.log(API_URL);
-
+  if (inputEL.value) {
+    fetch(API_URL)
+      .then((response) => response.json())
+      .then((data) => applyResults(data.conversion_rates))
+      .catch((error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Erro',
+          text: 'Moeda informada inexistente. Tente novamente!',
+        });
+      });
+  } else {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Atenção',
+      text: 'Por favor, insira uma moeda para realizar a busca.',
+    });
+  }
 });
