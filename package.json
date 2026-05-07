@@ -19,6 +19,7 @@
   "homepage": "https://github.com/gvscript/casa-de-cambio#readme",
   "type": "module",
   "dependencies": {
+    "sweetalert2": "^11.26.24",
     "vite": "^8.0.10"
   }
 }
