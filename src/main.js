@@ -2,12 +2,9 @@ import './style.css';
 import Swal from 'sweetalert2';
 
 const searchBtnEL = document.getElementById('search-btn');
-const inputEL = document.getElementById('coin-input');
-const API_KEY = import.meta.env.VITE_API_KEY;
-const moeda = '';
-const API_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${moeda}`
 
-const applyResults = (data) => {
+
+const applyResults = (data, moeda) => {
   console.log('Dados recebidos da API:', data);
   const resultsEl = Object.entries(data).map(([key, value]) => {
     return(`<div class="result-item">
@@ -30,10 +27,15 @@ const applyResults = (data) => {
 };
 
 searchBtnEL.addEventListener('click', () => {
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  const inputEL = document.getElementById('coin-input');
+  const moeda = inputEL.value.trim().toUpperCase();
+  const API_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${moeda}`
+  
   if (moeda) {
     fetch(API_URL)
       .then((response) => response.json())
-      .then((data) => applyResults(data.conversion_rates))
+      .then((data) => applyResults(data.conversion_rates, moeda))
       .catch((error) => {
         Swal.fire({
           icon: 'error',
@@ -42,6 +44,7 @@ searchBtnEL.addEventListener('click', () => {
         });
       });
   } else {
+    console.log('Moeda não informada', moeda);
     Swal.fire({
       icon: 'warning',
       title: 'Atenção',
