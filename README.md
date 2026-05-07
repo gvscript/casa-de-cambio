@@ -41,7 +41,7 @@ git clone git@github.com:gvscript/casa-de-cambio.git
 ### 2. Acesse a pasta do projeto
 
 ```bash
-cd nome-do-projeto
+cd casa-de-cambio
 ```
 
 ---
