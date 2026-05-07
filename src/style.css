@@ -46,6 +46,7 @@ body {
   font-size: clamp(3rem, 5vw, 5rem);
   line-height: 0.95;
   letter-spacing: -0.04em;
+  font-weight: 700;
 }
 
 .hero-copy h1 span {
@@ -182,9 +183,15 @@ body {
 }
 
 .result-placeholder {
-  margin: 0;
+  margin: 40px;
   color: #9aa5b2;
   font-size: 1rem;
+}
+
+.result-placeholder--actived {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 700;
 }
 
 @media (max-width: 720px) {

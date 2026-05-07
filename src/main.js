@@ -20,6 +20,11 @@ const applyResults = (data) => {
     </div>`)
   }).join('');
   const resultsContainerEL = document.getElementById('result-content');
+  const resultPlaceholderEL = document.getElementById('result-placeholder');
+  resultPlaceholderEL.innerText = `Valores referente a 1 ${moeda}`;
+  resultPlaceholderEL.classList.remove('result-placeholder');
+  resultPlaceholderEL.classList.add('result-placeholder--actived');
+  
   resultsContainerEL.innerHTML = resultsEl;
 };
 
